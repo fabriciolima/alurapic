@@ -9,13 +9,15 @@ import { CardComponent } from '../bootstrap/components/card/card.component';
 import { TresPontinhosPipe } from './pipes/tres-pontinhos.pipe';
 import { CardFotoComponent } from './components/card-foto/card-foto.component';
 
-import {BootstrapModule} from '../bootstrap/bootstrap.module'
+import {BootstrapModule} from '../bootstrap/bootstrap.module';
+import { FiltroBuscaPipe } from './pipes/filtro-busca.pipe'
 @NgModule({
   declarations: [
     AppComponent,
     FotoComponent,
     TresPontinhosPipe,
-    CardFotoComponent
+    CardFotoComponent,
+    FiltroBuscaPipe
   ],
   imports: [
     BrowserModule,

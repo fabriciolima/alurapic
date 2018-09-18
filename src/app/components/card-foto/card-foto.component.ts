@@ -1,4 +1,5 @@
 import { Component,  Input } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-card-foto',
@@ -7,5 +8,6 @@ import { Component,  Input } from '@angular/core';
 })
 export class CardFotoComponent  {
 @Input() foto
+
 
 }

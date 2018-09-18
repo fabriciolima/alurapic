@@ -8,14 +8,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'caelumpic';
-
+  
   fotos = []
-
+  
+  httpCliente: HttpClient;
   constructor(http: HttpClient){
+    this.httpCliente = http;
     http.get('http://localhost:3000/v1/fotos')
       .subscribe((resp: Array<any>) => {
         this.fotos = resp
       })
+    }
 
 
     /*fetch('http://localhost:3000/v1/fotos')
@@ -26,5 +29,16 @@ export class AppComponent {
       this.fotos = resp
     })
     */
+  
+
+  apagaFoto(fotoRemover){
+    this.httpCliente.delete('http://localhost:3000/v1/fotos/'+foto._id)
+      .subscribe(()=> {
+        this.fotos = this.fotos.filter(
+          foto=> foto._id!==fotoRemover._id
+        )
+        console.log('Apagou');
+      }) 
   }
+  
 }

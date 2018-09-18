@@ -7,11 +7,20 @@
   <!-- <foto *ngFor="let foto of fotos" url="{{foto.url}}" titulo="{{foto.titulo}}" ></foto> -->
 
   <div class="container">
+
+      <div class="form-group">
+        <input type="text" class="form-control" #inputDOM (input)="termo = inputDOM.value">
+
+      </div>
+
+
     <div class="row">
 
-      <div class="col-sm-2" *ngFor="let foto of fotos">
+      <div class="col-sm-2" *ngFor="let foto of fotos| filtroBusca:termo">
 
-          <app-card-foto [foto]="foto"></app-card-foto>
+          <app-card-foto [foto]="foto">
+            <button class="btn btn-danger d-block" (click)="apagaFoto(foto)">Apaga</button>
+          </app-card-foto>
       </div>
     </div>
   </div>
