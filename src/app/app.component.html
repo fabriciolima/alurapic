@@ -3,20 +3,19 @@
   <h1>
     Welcomkje to {{ title }}!
   </h1>
-  <img width="300" alt="Angular Logo" src="assets/alvo.png">
-  <foto *ngFor="let foto of fotos" url="{{foto.url}}" ></foto>
+  <!-- <img width="300" alt="Angular Logo" src="assets/alvo.png"> -->
+  <!-- <foto *ngFor="let foto of fotos" url="{{foto.url}}" titulo="{{foto.titulo}}" ></foto> -->
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-2" *ngFor="let foto of fotos">
+
+          <app-card-foto [foto]="foto"></app-card-foto>
+      </div>
+    </div>
+  </div>
+  <!-- <foto *ngFor="let foto of fotos" [foto]="foto" ></foto> -->
+  <!-- [] torna a variavel dinamica -->
   
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
