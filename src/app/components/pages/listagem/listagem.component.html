@@ -1,0 +1,24 @@
+<div class="container">
+
+  <div class="form-group">
+    <a [routerLink]="['cadastro']" class="btnbtn-primary input-group-addon">+</a>
+    <input type="text" class="form-control" #inputDOM (input)="termo = inputDOM.value">
+
+  </div>
+
+
+<div class="row">
+
+  <div class="col-sm-2" *ngFor="let foto of fotos| filtroBusca:termo">
+
+      <app-card-foto [foto]="foto">
+        <button class="btn btn-danger d-block" (click)="apagaFoto(foto)">Apaga</button>
+        <a class="btn btn-info d-block mx-auto mt-2" [routerLink]="['cadastro',foto._id]">
+          Editar
+        </a>
+      </app-card-foto>
+  </div>
+</div>
+</div>
+<!-- <foto *ngFor="let foto of fotos" [foto]="foto" ></foto> -->
+<!-- [] torna a variavel dinamica -->

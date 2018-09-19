@@ -1,0 +1,32 @@
+<section class="container">
+
+  <div class="jumbotron text-center">
+    <h2>Cadastro</h2>
+  </div>
+
+  <div class="row">
+    <form class="col-sm-6" (submit)="enviarFoto()">
+      <div class="form-group">
+        <label for="">Titulo</label>
+        <input class="form-control" name="titulo" [(ngModel)]="foto.titulo">
+      </div>
+      <div class="form-group">
+        <label for="">URL</label>
+        <input class="form-control" name="url"[(ngModel)]="foto.url">
+      </div>
+      <div class="form-group">
+        <label for="">Descrição</label>
+        <textarea class="form-control" name="descricao" [(ngModel)]="foto.descricao"></textarea>
+      </div>
+      
+      <a class="btn btn-default" [routerLink]="['']">
+        Voltar
+      </a>
+
+      <button type="submit" class="btn btn-primary">
+        Salvar
+      </button>
+    </form>
+    <app-card-foto [foto]="foto" class="col-sm-6"></app-card-foto>
+  </div>
+</section>

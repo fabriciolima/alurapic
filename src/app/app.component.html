@@ -6,25 +6,10 @@
   <!-- <img width="300" alt="Angular Logo" src="assets/alvo.png"> -->
   <!-- <foto *ngFor="let foto of fotos" url="{{foto.url}}" titulo="{{foto.titulo}}" ></foto> -->
 
-  <div class="container">
+<!--   <app-listagem></app-listagem>
+  <app-cadastro></app-cadastro>
+ -->
 
-      <div class="form-group">
-        <input type="text" class="form-control" #inputDOM (input)="termo = inputDOM.value">
-
-      </div>
-
-
-    <div class="row">
-
-      <div class="col-sm-2" *ngFor="let foto of fotos| filtroBusca:termo">
-
-          <app-card-foto [foto]="foto">
-            <button class="btn btn-danger d-block" (click)="apagaFoto(foto)">Apaga</button>
-          </app-card-foto>
-      </div>
-    </div>
-  </div>
-  <!-- <foto *ngFor="let foto of fotos" [foto]="foto" ></foto> -->
-  <!-- [] torna a variavel dinamica -->
+  <<router-outlet></router-outlet>
   
 </div>
